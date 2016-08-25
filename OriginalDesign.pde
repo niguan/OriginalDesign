@@ -1,5 +1,5 @@
   int x = 40;
-  int skullX = 35;
+  int x1 = 35;
   int faceX = 35;
   int hoodX = 35;
   int changeY = 25;
@@ -17,35 +17,41 @@ void draw()
   skull();
   face();
   scyth();
-  moveHood();
-  moveSkull();
-  moveFace();
-  //moveScyth();
 
+  //moveHood();
+  //moveSkull();
+  //moveFace();
+  //moveScyth();
 }
 
 void skull()
 {
   fill(255);
-  ellipse(100,80,115,115);
+  ellipse(100 + x1,80 + changeY,115,115);
   noStroke();
-  arc(100,108,100,100,13*PI/40, 27*PI/40);
-  //skullX = skullX - x;
+  arc(100 + x1,108 + changeY,100,100,13*PI/40, 27*PI/40);
+  if (mousePressed())
+ {
+  x1 = x1 +40;
+ }
+  if (x1=75 &&  mousePressed())
+ {
+  x1= 35;	
+ }
 }
 
 void face()
 {
   fill(0);
-  ellipse(80,90,20,20);
-  ellipse(120,90,20,20);
-  //faceX = faceX - x;
+  ellipse(80 + x1,90 + changeY,20,20);
+  ellipse(120 + x1,90 + changeY,20,20);
 }
 void hood()
 {
   fill(0);
-  ellipse(100,100,145,220);
-  //hoodX = hoodX - x;
+  ellipse(100 + x1,100 + changeY,145,220);
 }
+
 void robe()
 {
   fill(0);
@@ -59,27 +65,35 @@ void scyth()
   bezier(255,115,265,30,215,80,185,175);
 }
 
-void moveSkull()
+/*void moveSkull()
 {
   fill(255);
-  ellipse(100 + skullX,80 + changeY,115,115);
+  ellipse(skullX + x,80 + changeY,115,115);
   noStroke();
-  arc(100 + skullX,108 + changeY,100,100,13*PI/40, 27*PI/40);
+  arc(100 + skullX + x,108 + changeY,100,100,13*PI/40, 27*PI/40);
 }
 
 void moveFace()
 {
   fill(0);
-  ellipse(80 + faceX,90 + changeY,20,20);
-  ellipse(120 + faceX,90 + changeY,20,20);
+  ellipse(80 + faceX + x,90 + changeY,20,20);
+  ellipse(120 + faceX + x,90 + changeY,20,20);
 }
 void moveHood()
 {
   fill(0);
-  ellipse(100 + hoodX,100 + changeY,145,220);
+  ellipse(100 + hoodX + x,100 + changeY,145,220);
+}
+
+void moveScyth()
+{
+  fill(51,25,0);
+  rect(255 + x,75,15,400);
+  fill(160,160,160);
+  bezier(255+x,115,265+x,30,215+x,80,185+x,175);
 }
 
 void mousePressed()
 {
   redraw();
-}
+}*/
