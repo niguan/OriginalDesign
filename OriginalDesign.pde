@@ -1,4 +1,4 @@
-  int x = 40;
+  int x = 75;
   int x1 = 35;
   int faceX = 35;
   int hoodX = 35;
@@ -7,7 +7,6 @@
 void setup()
 {
   size(350,350);
-  noLoop();
 }
 void draw()
 {
@@ -30,15 +29,8 @@ void skull()
   ellipse(100 + x1,80 + changeY,115,115);
   noStroke();
   arc(100 + x1,108 + changeY,100,100,13*PI/40, 27*PI/40);
-  if (mousePressed())
- {
-  x1 = x1 +40;
- }
-  if (x1=75 &&  mousePressed())
- {
-  x1= 35;	
- }
 }
+
 
 void face()
 {
@@ -65,6 +57,14 @@ void scyth()
   bezier(255,115,265,30,215,80,185,175);
 }
 
+void mousePressed()
+{
+	x1 = x1 + 40;
+	if (x1 = 75 && mousePressed())
+	{
+		x1 = 40;
+	}
+}
 /*void moveSkull()
 {
   fill(255);
