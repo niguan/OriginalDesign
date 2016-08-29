@@ -47,24 +47,26 @@ void hood()
 void robe()
 {
   fill(0);
-  triangle(175,100,100,350,250,350);
+  triangle(140 + x1,100,65 + x1,350,215+ x1,350);
 }
 void scyth()
 {
   fill(51,25,0);
-  rect(255,75,15,400);
+  rect(255+x1,75,15,400);
   fill(160,160,160);
-  bezier(255,115,265,30,215,80,185,175);
+  bezier(255+x1,115,265+x1,30,215+x1,80,185+x1,175);
 }
 
 void mousePressed()
 {
 	x1 = x1 + 40;
-	if (x1 = 75 && mousePressed())
-	{
-		x1 = 40;
-	}
+	// if (x1==75 && mousePressed)
+	// {
+	// 	x1 = 35;
+	// }
 }
+
+
 /*void moveSkull()
 {
   fill(255);
